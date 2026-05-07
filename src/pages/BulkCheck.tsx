@@ -32,14 +32,20 @@ export default function BulkCheck() {
         body: JSON.stringify({ queries: lines })
       });
       
+      if (!response.ok) {
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const errorMsg = await response.json();
+          throw new Error(errorMsg.error || 'Bulk check failed');
+        } else {
+          const text = await response.text();
+          throw new Error('Server error: ' + text.substring(0, 50));
+        }
+      }
+
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         throw new Error('Server returned invalid response format');
-      }
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Bulk check failed');
       }
       
       const data = await response.json();

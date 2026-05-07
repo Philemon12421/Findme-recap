@@ -47,16 +47,23 @@ export default function Home() {
     try {
       const response = await fetch('/api/check-username?query=' + encodeURIComponent(query));
       
+      if (!response.ok) {
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to fetch results');
+        } else {
+          const text = await response.text();
+          console.error('Server error:', text.substring(0, 100));
+          throw new Error('Server returned an error');
+        }
+      }
+
       const contentType = response.headers.get("content-type");
       if (!contentType || !contentType.includes("application/json")) {
         const text = await response.text();
         console.error('Non-JSON response received:', text.substring(0, 100));
-        throw new Error('Server returned an invalid response (expected JSON)');
-      }
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to fetch results');
+        throw new Error('Server returned an invalid response format');
       }
       
       const data = await response.json();
