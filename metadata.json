@@ -1,0 +1,6 @@
+{
+  "name": "Findme - Digital Identity Scanner",
+  "description": "Findme by Drenchack Tech Company - AI-powered identity scanner owned by Philemon Osei kusi. Check handles and domains across 1000+ platforms.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Identity Search", "Username Checker", "Domain Availability"]
+}
