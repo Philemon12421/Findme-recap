@@ -24,7 +24,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     githubStatus = Math.random() > 0.5 ? "available" : "taken";
   }
 
-  const socialPlatforms = [
+  interface Platform {
+    name: string;
+    url: string;
+    type: string;
+    status?: string;
+  }
+
+  const socialPlatforms: Platform[] = [
     { name: "GitHub", url: `https://github.com/${cleanQuery}`, type: 'social', status: githubStatus },
     { name: "Instagram", url: `https://instagram.com/${cleanQuery}`, type: 'social' },
     { name: "Twitter", url: `https://twitter.com/${cleanQuery}`, type: 'social' },
@@ -36,7 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     { name: "YouTube", url: `https://youtube.com/@${cleanQuery}`, type: 'social' }
   ];
 
-  const domains = [
+  const domains: Platform[] = [
     { name: `${cleanQuery}.com`, url: `https://whois.com/whois/${cleanQuery}.com`, type: 'domain' },
     { name: `${cleanQuery}.net`, url: `https://whois.com/whois/${cleanQuery}.net`, type: 'domain' },
     { name: `${cleanQuery}.org`, url: `https://whois.com/whois/${cleanQuery}.org`, type: 'domain' },
@@ -44,7 +51,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     { name: `${cleanQuery}.ai`, url: `https://whois.com/whois/${cleanQuery}.ai`, type: 'domain' }
   ];
 
-  const results = [...socialPlatforms, ...domains].map(p => {
+  const results = [...socialPlatforms, ...domains].map((p: Platform) => {
     const status = p.status || (cleanQuery.length < 4 ? "taken" : (Math.random() > 0.6 ? "available" : "taken"));
     return {
       ...p,

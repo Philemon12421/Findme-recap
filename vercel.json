@@ -2,18 +2,12 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
     },
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/index.html"
     }
-  ],
-  "functions": {
-    "server.ts": {
-      "runtime": "vercel-node@3.2.14",
-      "includeFiles": ["dist/**"]
-    }
-  }
+  ]
 }
