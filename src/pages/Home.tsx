@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import SearchBar from '../components/SearchBar';
+import SEO from '../components/SEO';
 import { CheckCircle2, XCircle, ExternalLink, ShieldCheck, Zap, Globe, Github, Instagram, Twitter, Facebook, Linkedin, Youtube, Music, MessageSquare, Sparkles, Twitch } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -92,6 +93,10 @@ export default function Home() {
 
   return (
     <div className="pt-24 pb-20 px-4 min-h-screen max-w-full overflow-x-hidden">
+      <SEO 
+        title="Findme - Check Any Identity Anywhere" 
+        description="Search usernames and domain availability across 1000+ platforms in seconds with Findme, the ultimate digital identity scanner."
+      />
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto text-center mb-16 px-4">
         <motion.div

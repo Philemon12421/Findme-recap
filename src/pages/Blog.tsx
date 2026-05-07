@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import ReactMarkdown from 'react-markdown';
+import SEO from '../components/SEO';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 
 const mockPosts = [
@@ -39,6 +40,10 @@ export default function Blog() {
 
   return (
     <div className="pt-24 pb-20 px-4 max-w-4xl mx-auto">
+      <SEO 
+        title={selectedPost ? selectedPost.title : "Identity Blog"} 
+        description={selectedPost ? selectedPost.excerpt : "Expert insights on personal branding, digital security, and AI identity tools from the Findme team."}
+      />
       {!selectedPost ? (
         <>
           <div className="mb-12">

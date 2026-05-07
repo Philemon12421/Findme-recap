@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import SEO from '../components/SEO';
 import { Trash2, Globe, Github, Instagram, Twitter, Music, Facebook, MessageSquare, Linkedin, Youtube, Zap, ExternalLink, CheckCircle2, XCircle } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -43,6 +44,10 @@ export default function Dashboard() {
 
   return (
     <div className="pt-24 pb-20 px-4 max-w-6xl mx-auto min-h-screen">
+      <SEO 
+        title="Dashboard - Saved Identitites" 
+        description="Manage your saved usernames and domain availability results on your Findme dashboard."
+      />
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-4">
         <div>
           <h1 className="text-4xl font-bold mb-2">My Dashboard</h1>

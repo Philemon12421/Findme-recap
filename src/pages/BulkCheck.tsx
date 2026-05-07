@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import SEO from '../components/SEO';
 import { Upload, FileText, Play, Download, Search, CheckCircle2, XCircle, Globe, Github, Loader2 } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -80,6 +81,10 @@ export default function BulkCheck() {
 
   return (
     <div className="pt-24 pb-20 px-4 max-w-6xl mx-auto min-h-screen">
+      <SEO 
+        title="Bulk Verify - Check Multiple Handles" 
+        description="Paste a list or upload a CSV to check up to 50 usernames and domains at once with Findme's bulk verify tool."
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Bulk Verify</h1>
         <p className="text-slate-500 max-w-xl mx-auto font-medium">

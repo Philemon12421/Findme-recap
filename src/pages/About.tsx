@@ -1,9 +1,14 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 import { Target, Users, Zap, ShieldCheck, Globe, Search } from 'lucide-react';
 
 export default function About() {
   return (
     <div className="pt-24 pb-20 px-4 max-w-5xl mx-auto min-h-screen">
+      <SEO 
+        title="About Findme - Our Mission and Story" 
+        description="Learn about Findme, crafted by Drenchack Tech Company. Discover our mission to solve handle fragmentation and protect your digital identity."
+      />
       <div className="text-center mb-20">
         <motion.div
            initial={{ opacity: 0, scale: 0.9 }}

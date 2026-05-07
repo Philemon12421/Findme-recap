@@ -1,9 +1,14 @@
 import { motion } from 'motion/react';
+import SEO from '../components/SEO';
 import { Mail, MessageCircle, HelpCircle, ArrowRight } from 'lucide-react';
 
 export default function Support() {
   return (
     <div className="pt-24 pb-20 px-4 max-w-4xl mx-auto">
+      <SEO 
+        title="Support Center - Findme" 
+        description="Need help with your digital identity? Reach out to Findme's support team via email or WhatsApp for immediate assistance."
+      />
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">Support Center</h1>
         <p className="text-slate-500">Need help with your digital identity? We're here for you.</p>

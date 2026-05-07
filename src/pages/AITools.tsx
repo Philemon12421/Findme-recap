@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Sparkles, Type, MessageCircle, PenTool, Loader2 } from 'lucide-react';
+import SEO from '../components/SEO';
 import { generateAIVariants, generateLogoConcept, identityChatAssistant } from '../services/aiTools';
 import { cn } from '../lib/utils';
 
@@ -40,6 +41,10 @@ export default function AITools() {
 
   return (
     <div className="pt-24 pb-20 px-4 max-w-6xl mx-auto min-h-screen">
+      <SEO 
+        title="AI Identity Intelligence Tools" 
+        description="Optimize your personal brand with Findme's AI naming generator, logo concepts, and identity chat assistant."
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Identity Intelligence Tools</h1>
         <p className="text-slate-500 max-w-xl mx-auto font-medium">Smart identity tools and naming generators powered by our local brand-logic engine.</p>
