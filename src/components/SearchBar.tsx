@@ -21,7 +21,7 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
   return (
     <div className="w-full max-w-2xl mx-auto">
       <form onSubmit={handleSubmit} className="relative group">
-        <div className="absolute inset-x-0 -inset-y-0.5 bg-gradient-to-r from-brand-orange to-orange-400 rounded-full blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+        <div className="absolute inset-x-0 -inset-y-0.5 bg-gradient-to-r from-brand-orange to-brand-orange-light rounded-full blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
         <div className="relative flex items-center bg-white border border-slate-200 rounded-full py-2 pl-6 pr-2 shadow-xl focus-within:ring-2 focus-within:ring-brand-orange/20 transition-all duration-300">
           <Search className="text-slate-400 mr-3 shrink-0" size={20} />
           <input
@@ -44,7 +44,7 @@ export default function SearchBar({ onSearch, isLoading }: SearchBarProps) {
       <div className="mt-4 flex flex-wrap justify-center gap-4 text-xs text-slate-500 font-medium">
         <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> 1000+ Platforms</span>
         <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div> AI Identity Match</span>
-        <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Domain Check</span>
+        <span className="flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-brand-orange"></div> Domain Check</span>
       </div>
     </div>
   );

@@ -236,7 +236,7 @@ export default function Home() {
           {
             title: "Real-time Verification",
             desc: "Live API connectors ensure 100% accurate availability checks with zero cached results.",
-            icon: <Zap className="text-orange-500" size={32} />
+            icon: <Zap className="text-brand-orange" size={32} />
           },
           {
             title: "Global Coverage",

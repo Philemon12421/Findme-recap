@@ -16,7 +16,7 @@ export default function Support() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="glass rounded-3xl p-8 border border-slate-100 flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-2xl bg-orange-50 flex items-center justify-center text-brand-orange mb-6">
+          <div className="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center text-brand-orange mb-6">
             <Mail size={32} />
           </div>
           <h2 className="text-xl font-bold mb-2">Email Support</h2>

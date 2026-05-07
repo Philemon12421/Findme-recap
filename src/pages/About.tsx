@@ -67,7 +67,7 @@ export default function About() {
             {
               title: "AI Driven",
               desc: "Our matching engine goes beyond exact strings to find related handles and visual matches.",
-              icon: <Zap className="text-orange-500" />
+              icon: <Zap className="text-brand-orange" />
             }
           ].map((pillar, i) => (
             <div key={i} className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-xl transition-all">
